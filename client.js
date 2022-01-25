@@ -43,20 +43,43 @@ function bonusCalc(array) {
   console.log('in bonusCalc');
   
   for (let i=0; i<array.length; i++) {
+
+    let object = {
+      name: array[i].name,
+      bonusPercentage: array[i].bonusPercentage,
+      totalCompensation: array[i].totalCompensation,
+      // totalBonus: array[i].totalBonus
+    };
+
     if (array[i].reviewRating <= 2) {
-      console.log(array[i], 'No bonus this year');
+      // console.log(array[i], 'No bonus this year');
+      object.bonusPercentage = 0;
+
     }else if (array[i].reviewRating === 3) {
-      console.log(array[i], '4% bonus this year');
+      // console.log(array[i], '4% bonus this year');
+     object.bonusPercentage = 4;
       
     } else if (array[i].reviewRating === 4) {
-      console.log(array[i], '6% bonus this year');
+      // console.log(array[i], '6% bonus this year');
+     object.bonusPercentage = 6;
       
     } else if (array[i].reviewRating === 5) {
-      console.log(array[i], '10% bonus this year');
-      
-    } 
+      // console.log(array[i], '10% bonus this year');
+      object.bonusPercentage = 10;
+  
+    }
+    console.log(object); // outputs all correct bonus percentages for each employee
+
+    if (array[i].employeeNumber.length = 4) {
+      object.bonusPercentage + 5;
+    }
+    console.log(object); 
     
+     
   } // end loop
 } // bonusCalc
 
 bonusCalc(employees);
+
+
+// salary = (salary * .04) + (+salary);
