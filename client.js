@@ -43,7 +43,18 @@ function bonusCalc(array) {
   console.log('in bonusCalc');
   
   for (let i=0; i<array.length; i++) {
-    console.log(array[i]);
+    if (array[i].reviewRating <= 2) {
+      console.log(array[i], 'No bonus this year');
+    }else if (array[i].reviewRating === 3) {
+      console.log(array[i], '4% bonus this year');
+      
+    } else if (array[i].reviewRating === 4) {
+      console.log(array[i], '6% bonus this year');
+      
+    } else if (array[i].reviewRating === 5) {
+      console.log(array[i], '10% bonus this year');
+      
+    } 
     
   } // end loop
 } // bonusCalc
