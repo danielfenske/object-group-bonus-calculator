@@ -48,14 +48,14 @@ function bonusCalc(array) {
       name: array[i].name,
       bonusPercentage: array[i].bonusPercentage,
       totalCompensation: array[i].totalCompensation,
-      // totalBonus: array[i].totalBonus
+      totalBonus: array[i].totalBonus
     };
 
     if (array[i].reviewRating <= 2) {
       // console.log(array[i], 'No bonus this year');
       object.bonusPercentage = 0;
 
-    }else if (array[i].reviewRating === 3) {
+    } else if (array[i].reviewRating === 3) {
       // console.log(array[i], '4% bonus this year');
      object.bonusPercentage = 4;
       
@@ -68,14 +68,28 @@ function bonusCalc(array) {
       object.bonusPercentage = 10;
   
     }
-    console.log(object); // outputs all correct bonus percentages for each employee
+    // console.log(object); // outputs all correct bonus percentages for each employee
 
-    if (array[i].employeeNumber.length = 4) {
-      object.bonusPercentage + 5;
+    if (array[i].employeeNumber.length === 4) {
+      object.bonusPercentage += 5;
     }
-    console.log(object); 
+    // console.log(object); // bonus percentage for Scout and Atticus goes up 5
     
-     
+    if (array[i].annualSalary > 65000) {
+      object.bonusPercentage -= 1;
+    }
+    // console.log(object); // bonus percentage for Scout and Robert go down 1
+
+    if (object.bonusPercentage < 0) {
+      object.bonusPercentage = 0;
+    }
+    console.log(object); // bonus percentage for Robert goes to 0
+
+    if (object.bonusPercentage > 13) {
+      object.bonusPercentage = 13;
+    }
+    console.log(object); // Scout's bonus percentage reduced to 13
+
   } // end loop
 } // bonusCalc
 
