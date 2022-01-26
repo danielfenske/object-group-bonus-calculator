@@ -83,16 +83,20 @@ function bonusCalc(array) {
     if (object.bonusPercentage < 0) {
       object.bonusPercentage = 0;
     }
-    console.log(object); // bonus percentage for Robert goes to 0
+    // console.log(object); // bonus percentage for Robert goes to 0
 
     if (object.bonusPercentage > 13) {
       object.bonusPercentage = 13;
     }
-    console.log(object); // Scout's bonus percentage reduced to 13
+    // console.log(object); // Scout's bonus percentage reduced to 13
 
     // Determining totalBonus
     object.totalBonus = Math.round(array[i].annualSalary * object.bonusPercentage * .01); // calc bonus amount + rounds to nearest whole number
     console.log(object); // successfully calculates bonus amount
+
+    // Determining totalCompensation
+    object.totalCompensation = object.totalBonus + (+array[i].annualSalary); // adds togeter total bonus + annual salary
+    console.log(object); // successfully calculates total compensation amount
 
   } // end loop
 } // bonusCalc
