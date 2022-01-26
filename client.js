@@ -41,6 +41,8 @@ const employees = [
 
 function bonusCalc(array) {
   console.log('in bonusCalc');
+
+  let compensationReport = [];
   
   for (let i=0; i<array.length; i++) {
 
@@ -95,13 +97,13 @@ function bonusCalc(array) {
     console.log(object); // successfully calculates bonus amount
 
     // Determining totalCompensation
-    object.totalCompensation = object.totalBonus + (+array[i].annualSalary); // adds togeter total bonus + annual salary
+    object.totalCompensation = object.totalBonus + (+array[i].annualSalary); // adds together total bonus + annual salary
     console.log(object); // successfully calculates total compensation amount
 
+    compensationReport.push(object); // pushes each object to empty array compensationReport
+
   } // end loop
+  return compensationReport; // returns array of objects
 } // bonusCalc
 
-bonusCalc(employees);
-
-
-// salary = (salary * .04) + (+salary);
+console.log('Compensation report:', bonusCalc(employees)); // successfully provides output of compensationReport array
