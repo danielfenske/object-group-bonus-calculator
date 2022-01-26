@@ -90,6 +90,10 @@ function bonusCalc(array) {
     }
     console.log(object); // Scout's bonus percentage reduced to 13
 
+    // Determining totalBonus
+    object.totalBonus = Math.round(array[i].annualSalary * object.bonusPercentage * .01); // calc bonus amount + rounds to nearest whole number
+    console.log(object); // successfully calculates bonus amount
+
   } // end loop
 } // bonusCalc
 
